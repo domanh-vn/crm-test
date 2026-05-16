@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LUX CRM - Khách hàng</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen font-body-md text-on-surface">
+
+<aside class="fixed left-0 top-0 h-screen w-[240px] bg-white/95 backdrop-blur-md border-r border-[#E8E4DF] shadow-xl flex flex-col py-8 px-4 gap-8 z-50">
+    <div class="flex flex-col items-center gap-4 mb-4">
+        <div class="text-center">
+            <h2 class="font-headline-sm text-[18px] font-medium text-primary">Yến Sào Vĩnh Hưng</h2>
+            <p class="font-label-md text-[12px] uppercase tracking-widest text-secondary mt-1">Hệ Thống CRM</p>
+        </div>
+    </div>
+    
+    <nav class="flex-1 flex flex-col gap-2">
+        <a href="index.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-md text-[14px]">Tổng quan</span>
+        </a>
+        <a href="kanban.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">view_kanban</span>
+            <span class="font-label-md text-[14px]">Cơ hội</span>
+        </a>
+        <a href="tasks.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span class="font-label-md text-[14px]">Công việc</span>
+        </a>
+        <a href="customers.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-primary font-bold border-l-4 border-primary bg-[#FFF8E8] transition-all duration-300">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-md text-[14px]">Danh sách</span>
+        </a>
+        <a href="payments.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="font-label-md text-[14px]">Thanh toán</span>
+        </a>
+        <a href="settings.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-md text-[14px]">Cài đặt</span>
+        </a>
+    </nav>
+    <div class="flex flex-col gap-2 border-t border-[#E8E4DF] pt-6">
+        <a href="login.html" class="flex items-center gap-4 py-2 px-4 rounded-lg text-secondary opacity-70 hover:text-error transition-all">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-md text-[14px]">Đăng xuất</span>
+        </a>
+    </div>
+</aside>
+
+<main class="ml-[240px] flex-1 flex flex-col h-screen">
+    <header class="bg-white/95 backdrop-blur-md h-[64px] px-8 flex justify-between items-center sticky top-0 z-40 shadow-sm border-b border-[#E8E4DF]">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-[#FAFAF9] border border-[#E8E4DF] px-4 py-2 rounded-full w-96">
+                <span class="material-symbols-outlined text-secondary mr-2">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-body-md w-full outline-none" placeholder="Tìm kiếm khách hàng..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 relative">
+            <button onclick="showToast('Bạn không có thông báo mới', 'success')" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+            </button>
+            <button onclick="window.location.href='settings.html'" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+            <div class="flex items-center gap-3 pl-4 border-l border-[#E8E4DF] cursor-pointer hover:opacity-80 transition-opacity" onclick="window.location.href='settings.html'">
+                <div class="text-right">
+                    <p class="font-label-md text-[14px] text-on-surface leading-tight font-medium">Nguyễn Phước Vĩnh Hưng</p>
+                    <p class="font-label-md text-[12px] text-secondary">Quản trị viên</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary border border-primary/30">
+                    VH
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="p-8 flex-1 max-w-[1440px] mx-auto w-full space-y-8">
+        <section class="flex justify-between items-end">
+            <div>
+                <h1 class="font-headline-lg text-[32px] font-light text-[#2C2925] tracking-tight">Danh sách khách hàng</h1>
+                <div class="flex gap-4 mt-4">
+                    <select class="bg-white border border-[#E8E4DF] text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5">
+                        <option>Tất cả phân khúc</option>
+                        <option>Khách lẻ</option>
+                        <option>Đại lý</option>
+                        <option>VIP</option>
+                    </select>
+                    <select class="bg-white border border-[#E8E4DF] text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5">
+                        <option>Người phụ trách</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-right flex gap-3">
+                <button onclick="openModal('uploadCsvModal')" class="bg-white hover:bg-[#FAFAF9] text-[#2C2925] border border-[#E8E4DF] px-6 py-2.5 rounded-lg font-medium text-[14px] transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">upload</span>
+                    Upload CSV
+                </button>
+                <button onclick="openModal('addCustomerModal')" class="bg-[#D4A574] hover:bg-[#C49564] text-white px-6 py-2.5 rounded-lg font-medium text-[14px] transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">person_add</span>
+                    Thêm khách
+                </button>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-[#FAFAF9] text-secondary text-[14px] font-medium border-b border-[#E8E4DF]">
+                        <tr>
+                            <th class="px-6 py-4 w-10">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary border-[#E8E4DF]">
+                            </th>
+                            <th class="px-6 py-4">Tên Khách Hàng</th>
+                            <th class="px-6 py-4">Số Điện Thoại</th>
+                            <th class="px-6 py-4">Phân Khúc</th>
+                            <th class="px-6 py-4">Sản Phẩm Quan Tâm</th>
+                            <th class="px-6 py-4">Giai Đoạn</th>
+                            <th class="px-6 py-4">Người Phụ Trách</th>
+                            <th class="px-6 py-4 text-right">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#E8E4DF] text-[14px]" id="customers-table-body">
+                        <!-- Rendered via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 border-t border-[#E8E4DF] flex items-center justify-between bg-white/50">
+                <span class="text-[14px] text-secondary">Hiển thị <span class="font-medium text-[#2C2925]">1</span> đến <span class="font-medium text-[#2C2925]">10</span> trong số <span class="font-medium text-[#2C2925]" id="total-customers">0</span> khách hàng</span>
+                <div class="flex items-center gap-2">
+                    <button class="px-3 py-1 border border-[#E8E4DF] rounded bg-white text-secondary hover:bg-[#FAFAF9] disabled:opacity-50" disabled>Trước</button>
+                    <button class="px-3 py-1 border border-primary rounded bg-primary/10 text-primary font-medium">1</button>
+                    <button class="px-3 py-1 border border-[#E8E4DF] rounded bg-white text-secondary hover:bg-[#FAFAF9]">Sau</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Add Customer Modal -->
+<div id="addCustomerModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center">
+    <div class="modal-content bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-[#E8E4DF]">
+        <div class="px-6 py-4 border-b border-[#E8E4DF] flex justify-between items-center">
+            <h3 class="font-headline-sm text-[20px] text-[#2C2925]">Thêm khách hàng</h3>
+            <button class="close-modal text-secondary hover:text-error transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-4">
+            <div>
+                <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Tên khách hàng *</label>
+                <input type="text" id="custName" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+            </div>
+            <div>
+                <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Số điện thoại *</label>
+                <input type="text" id="custPhone" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Phân khúc</label>
+                    <select id="custSegment" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+                        <option value="Khách lẻ">Khách lẻ</option>
+                        <option value="Đại lý">Đại lý</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Sản phẩm</label>
+                    <select id="custProduct" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+                        <option value="Yến thô">Yến thô</option>
+                        <option value="Yến chưng">Yến chưng</option>
+                        <option value="Quà tặng">Quà tặng</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="px-6 py-4 bg-[#FAFAF9] border-t border-[#E8E4DF] flex justify-end gap-3">
+            <button class="close-modal px-5 py-2 rounded-lg text-secondary hover:bg-white border border-transparent hover:border-[#E8E4DF] transition-colors font-medium">Hủy</button>
+            <button id="saveCustBtn" class="bg-[#D4A574] hover:bg-[#C49564] text-white px-5 py-2 rounded-lg font-medium transition-colors">Thêm khách hàng</button>
+        </div>
+    </div>
+</div>
+
+<!-- Upload CSV Modal -->
+<div id="uploadCsvModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center">
+    <div class="modal-content bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-[#E8E4DF]">
+        <div class="px-6 py-4 border-b border-[#E8E4DF] flex justify-between items-center">
+            <h3 class="font-headline-sm text-[20px] text-[#2C2925]">Tải lên file CSV</h3>
+            <button class="close-modal text-secondary hover:text-error transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="border-2 border-dashed border-[#E8E4DF] rounded-xl p-8 text-center hover:border-primary hover:bg-[#FAFAF9] transition-colors cursor-pointer" onclick="this.querySelector('input').click()">
+                <input type="file" class="hidden" accept=".csv" onchange="document.getElementById('fileName').innerText = this.files[0] ? this.files[0].name : 'Chưa chọn file'">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <span class="material-symbols-outlined text-primary text-[24px]">cloud_upload</span>
+                </div>
+                <p class="font-medium text-[#2C2925] mb-1">Click để tải file lên hoặc kéo thả vào đây</p>
+                <p class="text-[12px] text-secondary">Chỉ hỗ trợ file .csv (Tối đa 5MB)</p>
+                <p id="fileName" class="text-[14px] font-medium text-primary mt-4"></p>
+            </div>
+            <div class="mt-4 flex items-center gap-2 text-[12px] text-secondary">
+                <span class="material-symbols-outlined text-[16px]">info</span>
+                <a href="#" class="text-primary hover:underline">Tải file CSV mẫu</a>
+            </div>
+        </div>
+        <div class="px-6 py-4 bg-[#FAFAF9] border-t border-[#E8E4DF] flex justify-end gap-3">
+            <button class="close-modal px-5 py-2 rounded-lg text-secondary hover:bg-white border border-transparent hover:border-[#E8E4DF] transition-colors font-medium">Hủy</button>
+            <button onclick="handleUploadCsv()" class="bg-[#D4A574] hover:bg-[#C49564] text-white px-5 py-2 rounded-lg font-medium transition-colors">Tiến hành Import</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/mock-api.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    renderCustomers();
+    
+    document.getElementById('saveCustBtn').addEventListener('click', () => {
+        const name = document.getElementById('custName').value;
+        const phone = document.getElementById('custPhone').value;
+        const segment = document.getElementById('custSegment').value;
+        const product = document.getElementById('custProduct').value;
+        
+        if(!name || !phone) {
+            showToast('Vui lòng điền đủ Tên và SĐT', 'error');
+            return;
+        }
+        
+        window.api.addLead({
+            name,
+            phone,
+            value: 0,
+            segment,
+            product,
+            deadline: '3 ngày',
+            priority: 'Mới'
+        });
+        
+        closeModal('addCustomerModal');
+        document.getElementById('custName').value = '';
+        document.getElementById('custPhone').value = '';
+        renderCustomers();
+        showToast('Đã thêm khách hàng!');
+    });
+});
+
+function getBadgeColors(segment) {
+    if (segment === 'VIP') return 'bg-[#FFF5F5] text-[#C95A5A]';
+    if (segment === 'Đại lý') return 'bg-[#FFF8E8] text-[#D4A574]';
+    return 'bg-[#E8F4F8] text-[#5A7D9A]'; // Khách lẻ
+}
+
+function renderCustomers() {
+    const leads = window.api.getLeads();
+    const tbody = document.getElementById('customers-table-body');
+    document.getElementById('total-customers').innerText = leads.length;
+    
+    tbody.innerHTML = leads.map(lead => `
+        <tr class="hover:bg-[#FAFAF9] transition-colors">
+            <td class="px-6 py-4">
+                <input type="checkbox" class="rounded text-primary focus:ring-primary border-[#E8E4DF]">
+            </td>
+            <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-[12px]">
+                        ${lead.name.charAt(0)}
+                    </div>
+                    <span class="font-medium text-[#2C2925] cursor-pointer hover:text-primary transition-colors">${lead.name}</span>
+                </div>
+            </td>
+            <td class="px-6 py-4 text-secondary">${lead.phone || 'Chưa cập nhật'}</td>
+            <td class="px-6 py-4">
+                <span class="px-2.5 py-1 rounded-md text-[12px] font-medium ${getBadgeColors(lead.segment)}">${lead.segment}</span>
+            </td>
+            <td class="px-6 py-4">
+                <span class="px-2.5 py-1 rounded-md text-[12px] font-medium bg-[#FAFAF9] text-secondary border border-[#E8E4DF]">${lead.product}</span>
+            </td>
+            <td class="px-6 py-4 text-secondary capitalize">${lead.stage}</td>
+            <td class="px-6 py-4 text-secondary">${lead.owner}</td>
+            <td class="px-6 py-4 text-right">
+                <div class="flex items-center justify-end gap-2">
+                    <button onclick="showToast('Tính năng sửa đang phát triển', 'success')" class="p-1.5 text-secondary hover:text-primary rounded hover:bg-primary/5 transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+                    <button onclick="deleteCustomer('${lead.id}')" class="p-1.5 text-secondary hover:text-error rounded hover:bg-error/5 transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+                </div>
+            </td>
+        </tr>
+    `).join('');
+}
+
+window.deleteCustomer = function(id) {
+    if(confirm('Bạn có chắc chắn muốn xóa khách hàng này?')) {
+        window.api.deleteLead(id);
+        renderCustomers();
+        showToast('Đã xóa khách hàng');
+    }
+}
+
+window.handleUploadCsv = function() {
+    const fileName = document.getElementById('fileName').innerText;
+    if(fileName && fileName !== 'Chưa chọn file') {
+        closeModal('uploadCsvModal');
+        showToast('Đã import thành công dữ liệu từ file CSV!');
+    } else {
+        showToast('Vui lòng chọn file CSV trước khi import', 'error');
+    }
+}
+</script>
+</body>
+</html>

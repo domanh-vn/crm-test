@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cài đặt - Yến Sào Vĩnh Hưng</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "primary-container": "#d4a574",
+                      "inverse-surface": "#2f3130",
+                      "on-tertiary-fixed-variant": "#204c5f",
+                      "secondary-fixed-dim": "#ccc5bf",
+                      "inverse-primary": "#efbd8a",
+                      "on-surface": "#1a1c1c",
+                      "primary": "#7c572d",
+                      "on-secondary-fixed-variant": "#4a4642",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#bfe8ff",
+                      "surface-tint": "#7c572d",
+                      "on-primary-fixed-variant": "#614018",
+                      "on-tertiary-container": "#194659",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f1f1f0",
+                      "tertiary-container": "#8ab4ca",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f3f4f3",
+                      "on-error": "#ffffff",
+                      "tertiary": "#3a6477",
+                      "surface-variant": "#e2e2e2",
+                      "on-error-container": "#93000a",
+                      "outline": "#827569",
+                      "on-surface-variant": "#50453b",
+                      "tertiary-fixed-dim": "#a2cde3",
+                      "secondary-fixed": "#e8e1db",
+                      "secondary-container": "#e5ded8",
+                      "primary-fixed-dim": "#efbd8a",
+                      "secondary": "#625e59",
+                      "on-secondary-fixed": "#1e1b17",
+                      "background": "#f9f9f8",
+                      "primary-fixed": "#ffdcbc",
+                      "surface-dim": "#dadad9",
+                      "outline-variant": "#d4c4b7",
+                      "surface-bright": "#f9f9f8",
+                      "on-primary-fixed": "#2c1700",
+                      "on-background": "#1a1c1c",
+                      "surface-container-high": "#e8e8e7",
+                      "on-primary": "#ffffff",
+                      "surface": "#f9f9f8",
+                      "on-primary-container": "#5b3a13",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary-fixed": "#001f2a",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#eeeeed",
+                      "on-secondary-container": "#66625d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-padding-desktop": "48px",
+                      "unit": "8px",
+                      "section-gap": "64px",
+                      "container-padding-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "300"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .luxury-shadow {
+            box-shadow: 0 16px 48px rgba(44, 41, 37, 0.08);
+        }
+        .modal-overlay {
+            background: rgba(44, 41, 37, 0.4);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-white/95 border-r border-white/60 shadow-[16px_0_48px_rgba(44,41,37,0.08)] flex flex-col py-gutter px-4 z-50">
+<div class="mb-10 px-4">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary">Vĩnh Hưng</h2>
+<p class="text-on-surface-variant text-xs tracking-widest uppercase opacity-70">Luxury CRM</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary hover:bg-primary-container/10 transition-all duration-300 rounded-xl group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-body-md">Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary hover:bg-primary-container/10 transition-all duration-300 rounded-xl group" href="#">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="font-body-md">Cơ hội</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary hover:bg-primary-container/10 transition-all duration-300 rounded-xl group" href="#">
+<span class="material-symbols-outlined text-xl">assignment</span>
+<span class="font-body-md">Công việc</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary hover:bg-primary-container/10 transition-all duration-300 rounded-xl group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="font-body-md">Danh sách</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary hover:bg-primary-container/10 transition-all duration-300 rounded-xl group" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="font-body-md">Thanh toán</span>
+</a>
+<!-- Active Tab: Cài đặt -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-2 border-primary bg-primary-container/5 rounded-l-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-body-md">Cài đặt</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-surface-variant/50 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">help</span>
+<span class="font-body-md">Hỗ trợ</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="font-body-md">Đăng xuất</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-64 bg-white/95 backdrop-blur-md border-b border-white/60 shadow-sm z-40 flex justify-between items-center px-container-padding-desktop py-4">
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-md w-64 focus:ring-1 focus:ring-primary-container" placeholder="Tìm kiếm hệ thống..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="material-symbols-outlined hover:bg-primary-container/10 p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined hover:bg-primary-container/10 p-2 rounded-full transition-colors">mail</button>
+</div>
+<div class="flex items-center gap-3 border-l border-surface-variant pl-6">
+<div class="text-right">
+<p class="text-body-md font-semibold text-primary">Quản trị viên</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Vĩnh Hưng Luxury</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim overflow-hidden border-2 border-white shadow-sm">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Professional portrait of a male luxury wealth manager in a bespoke charcoal suit, set against a minimalist architectural background with soft morning sunlight. The image uses a clean, high-key lighting style with warm golden undertones and premium textures, reflecting a calm and sophisticated professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAnXLelRFUQIZmWc92fHYPd3WtK5NCnPmEFwLdCEMCQg0YEEMnq1_xnd_Nnt8OSI-3bG4B_OcmdxVzGXQPNGaEnI6Yvg9rWEUxnq4etOa_Qig8r8c4yyrFaIkW7oExOPm8TXrKNhAyyVJuRoV-DwJV7nFTwaueHbfgvN7XzL280V0FL14VPd9J8Vig_3__fDMDx1k5CxAClS4QOilExEl6wMe42kjvImeJT8fx6CWlrouLln1xzzO_H5YfgL7UhD48xBis8l_-qe4i"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-container-padding-desktop min-h-screen">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div class="space-y-6">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Cài đặt</h1>
+<!-- Navigation Tabs -->
+<nav class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-2 font-body-md" href="#">Hồ sơ</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-2 font-body-md" href="#">Quản lý người dùng</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-2 font-body-md" href="#">Nhóm</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-2 font-body-md" href="#">Nhãn</a>
+</nav>
+</div>
+<button class="bg-[#D4A574] text-white px-6 py-3 rounded-[10px] flex items-center gap-2 font-body-md font-semibold hover:opacity-90 active:scale-95 transition-all luxury-shadow">
+<span class="material-symbols-outlined">add</span>
+                Thêm người dùng
+            </button>
+</div>
+<!-- User List Content -->
+<div class="glass-card rounded-2xl luxury-shadow overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-variant bg-surface-container-low/30">
+<th class="py-4 px-6 w-12">
+<input class="rounded border-outline-variant text-primary focus:ring-primary-container w-4 h-4" type="checkbox"/>
+</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Người dùng</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Vai trò</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Nhóm / Đội ngũ</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- User Row 1 -->
+<tr class="hover:bg-background transition-colors">
+<td class="py-4 px-6">
+<input class="rounded border-outline-variant text-primary focus:ring-primary-container w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional female executive in a light beige silk blouse, looking confidently at the camera. The background is a blurred luxury office interior with warm ambient lighting and a soft bokeh effect. The overall aesthetic is clean, minimalist, and exudes a sense of calm leadership and premium service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZiP7d4focinHzf0psC0YW4JO3RYT69pJslqt4NJDTRL24_5iEumlvtuIsNwGP0mS2_xAy4NNOc7FQsg8sLKBuoSEqXVgnNVq7w1cft5Ztez-uByl94XUZTPf3Un7wb6MLGvZqXiq5EkaHftUVyIvR6qbsqvdgz-0QsMGB-qZPRIln4A9Y2IhxG4DBH8Or02qH6aOzkmxUMXn5gFfszSvibmtAIjtdy5N5BpHJYfQG23gnMXR0b9YAQGObwywYTNlDabT7BpP-_N2F"/>
+</div>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Lê Minh Anh</p>
+<p class="text-xs text-on-surface-variant">minhanh.le@vinhhung.vn</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-tight">Admin</span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-body-md">Ban Điều Hành</td>
+<td class="py-4 px-6 text-right">
+<div class="flex justify-end gap-2">
+<button class="material-symbols-outlined text-secondary hover:text-primary p-2 transition-colors">edit</button>
+<button class="material-symbols-outlined text-secondary hover:text-error p-2 transition-colors">delete</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-background transition-colors">
+<td class="py-4 px-6">
+<input class="rounded border-outline-variant text-primary focus:ring-primary-container w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Portrait of a young male professional wearing a premium tailored light blue shirt, smiling subtly in a modern glass-walled office environment. The lighting is bright and natural, creating a welcoming and trustworthy atmosphere. The style is sophisticated minimalism with a soft, warm color palette consistent with luxury branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_sgC61JtIN9el6E_MA0uM_Ok7QStCCFl8gOXV0DHp_BVrsYwjbJC8gs4DMivE6UMghVYC81AMEjluvxti7dPaMpOeGOCqxTmBAPAz5rm42Smkt2LYRN7sgbLo_9UEgqtv_gVcxI1EPNfyrHUOIsg7khq8-2-_eIqTMTzQ03XMbdmT7_LJ4PtVV6Q6fkJjNKN5bRtII9GB8p0ZLlXe8EKDux_mh1nrQrIzMnRSHuzm8VBp5yVAsRgEIc4Z7i2FrEu9rJesZq8IsJZh"/>
+</div>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Nguyễn Tuấn Kiệt</p>
+<p class="text-xs text-on-surface-variant">tuankiet.n@vinhhung.vn</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-tight">Team Leader</span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-body-md">Kinh doanh Miền Nam</td>
+<td class="py-4 px-6 text-right">
+<div class="flex justify-end gap-2">
+<button class="material-symbols-outlined text-secondary hover:text-primary p-2 transition-colors">edit</button>
+<button class="material-symbols-outlined text-secondary hover:text-error p-2 transition-colors">delete</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-background transition-colors">
+<td class="py-4 px-6">
+<input class="rounded border-outline-variant text-primary focus:ring-primary-container w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A portrait of a elegant woman in a white blazer, representing luxury client relations. She is set against an airy background with hints of architectural greenery and warm stone textures. The lighting is diffused and high-key, conveying a sense of premium service, precision, and calm control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf4nHLExTqlMPzraNzhp0lGrHhxE_gcIZxbOBH8YoJplG1In6AYG1FEnph3tkOt4GLIPhx2oczYyTorywpeJJWul2V2l2joXBBU3TYsXATYIiQ2nUvFUdFzmdEtTgqRumfCJGUOiIZTA4X2P17QKsstgPLIzFUB_fHidjMdy4cqKbp0y6RYXu7MKcipguPs_mtd3qyTFf-Lgl84LFxuwyyCq7z3cresYN-unWx0uh6U5nph14aNPeQHSQw1H6LyG0x199dlLzPgzIv"/>
+</div>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Phạm Mỹ Linh</p>
+<p class="text-xs text-on-surface-variant">mylinh.p@vinhhung.vn</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-tight">Sales</span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-body-md">Kinh doanh Miền Nam</td>
+<td class="py-4 px-6 text-right">
+<div class="flex justify-end gap-2">
+<button class="material-symbols-outlined text-secondary hover:text-primary p-2 transition-colors">edit</button>
+<button class="material-symbols-outlined text-secondary hover:text-error p-2 transition-colors">delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination-like Footer -->
+<div class="p-6 border-t border-surface-variant flex justify-between items-center text-on-surface-variant">
+<p class="text-xs">Hiển thị 1 - 3 của 12 người dùng</p>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-lg border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded-lg border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors text-xs">2</button>
+<button class="w-8 h-8 rounded-lg border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay (Add New User) -->
+<div class="fixed inset-0 modal-overlay z-[100] flex items-center justify-center p-4">
+<div class="glass-card w-full max-w-lg rounded-2xl luxury-shadow overflow-hidden scale-100 transition-transform">
+<div class="p-8">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary font-semibold">Thêm người dùng mới</h3>
+<p class="text-body-md text-on-surface-variant mt-1">Cung cấp thông tin để tạo tài khoản mới.</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">close</button>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase ml-1">Họ và tên</label>
+<input class="w-full bg-white/50 border border-[#E8E4DF] rounded-[10px] px-4 py-3 text-body-md focus:border-[#D4A574] focus:ring-4 focus:ring-[#D4A574]/10 transition-all outline-none" placeholder="Nhập tên người dùng..." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase ml-1">Email công việc</label>
+<input class="w-full bg-white/50 border border-[#E8E4DF] rounded-[10px] px-4 py-3 text-body-md focus:border-[#D4A574] focus:ring-4 focus:ring-[#D4A574]/10 transition-all outline-none" placeholder="example@vinhhung.vn" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase ml-1">Vai trò hệ thống</label>
+<div class="relative">
+<select class="w-full bg-white/50 border border-[#E8E4DF] rounded-[10px] px-4 py-3 text-body-md focus:border-[#D4A574] focus:ring-4 focus:ring-[#D4A574]/10 transition-all outline-none appearance-none cursor-pointer">
+<option value="admin">Admin (Quản trị viên)</option>
+<option value="leader">Team Leader (Trưởng nhóm)</option>
+<option value="sales">Sales (Nhân viên)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<button class="flex-1 bg-[#D4A574] text-white py-3 rounded-[10px] font-semibold text-body-md hover:opacity-90 transition-all shadow-sm" type="submit">
+                            Lưu thông tin
+                        </button>
+<button class="px-6 py-3 text-secondary hover:text-primary font-semibold text-body-md transition-all" type="button">
+                            Hủy
+                        </button>
+</div>
+</form>
+</div>
+<div class="bg-surface-container-low/50 px-8 py-4 border-t border-surface-variant/50">
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant uppercase tracking-widest opacity-60">
+<span class="material-symbols-outlined text-sm">lock</span>
+                    Dữ liệu được bảo mật bởi Vĩnh Hưng Cloud
+                </div>
+</div>
+</div>
+</div>
+</body></html>

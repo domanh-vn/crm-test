@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LUX CRM - Tổng quan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen font-body-md text-on-surface">
+
+<aside class="fixed left-0 top-0 h-screen w-[240px] bg-white/95 backdrop-blur-md border-r border-[#E8E4DF] shadow-xl flex flex-col py-8 px-4 gap-8 z-50">
+    <div class="flex flex-col items-center gap-4 mb-4">
+        <div class="text-center">
+            <h2 class="font-headline-sm text-[18px] font-medium text-primary">Yến Sào Vĩnh Hưng</h2>
+            <p class="font-label-md text-[12px] uppercase tracking-widest text-secondary mt-1">Hệ Thống CRM</p>
+        </div>
+    </div>
+    
+    <nav class="flex-1 flex flex-col gap-2">
+        <a href="index.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-md text-[14px]">Tổng quan</span>
+        </a>
+        <a href="kanban.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">view_kanban</span>
+            <span class="font-label-md text-[14px]">Cơ hội</span>
+        </a>
+        <a href="tasks.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span class="font-label-md text-[14px]">Công việc</span>
+        </a>
+        <a href="customers.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-md text-[14px]">Danh sách</span>
+        </a>
+        <a href="payments.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="font-label-md text-[14px]">Thanh toán</span>
+        </a>
+        <a href="settings.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-md text-[14px]">Cài đặt</span>
+        </a>
+    </nav>
+    <div class="flex flex-col gap-2 border-t border-[#E8E4DF] pt-6">
+        <a href="login.html" class="flex items-center gap-4 py-2 px-4 rounded-lg text-secondary opacity-70 hover:text-error transition-all">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-md text-[14px]">Đăng xuất</span>
+        </a>
+    </div>
+</aside>
+
+<main class="ml-[240px] flex-1">
+    <header class="bg-white/95 backdrop-blur-md h-[64px] px-8 flex justify-between items-center sticky top-0 z-40 shadow-sm border-b border-[#E8E4DF]">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-[#FAFAF9] border border-[#E8E4DF] px-4 py-2 rounded-full w-96">
+                <span class="material-symbols-outlined text-secondary mr-2">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-body-md w-full outline-none" placeholder="Tìm kiếm hệ thống..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 relative">
+            <button onclick="showToast('Bạn không có thông báo mới', 'success')" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+            </button>
+            <button onclick="window.location.href='settings.html'" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+            <div class="flex items-center gap-3 pl-4 border-l border-[#E8E4DF] cursor-pointer hover:opacity-80 transition-opacity" onclick="window.location.href='settings.html'">
+                <div class="text-right">
+                    <p class="font-label-md text-[14px] text-on-surface leading-tight font-medium">Nguyễn Phước Vĩnh Hưng</p>
+                    <p class="font-label-md text-[12px] text-secondary">Quản trị viên</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary border border-primary/30">
+                    VH
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="p-8 max-w-[1440px] mx-auto space-y-8">
+        <section class="flex justify-between items-end">
+            <div>
+                <h1 class="font-headline-lg text-[32px] font-light text-[#2C2925] tracking-tight">Tổng quan</h1>
+                <p class="text-secondary opacity-80 mt-1">Chào mừng bạn trở lại, hệ thống đang hoạt động ổn định.</p>
+            </div>
+            <div class="text-right">
+                <p class="font-label-md text-[14px] text-secondary" id="current-date">Hôm nay, 16/05/2026</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- KPI Cards -->
+            <div class="glass-card rounded-xl p-6">
+                <p class="text-secondary font-label-md text-[14px] mb-2">Tổng lead tháng</p>
+                <h3 class="text-[36px] font-light text-[#2C2925] leading-none mb-4">45</h3>
+                <span class="text-[14px] text-[#10B981] font-medium">+15% so với tháng trước</span>
+            </div>
+            <div class="glass-card rounded-xl p-6">
+                <p class="text-secondary font-label-md text-[14px] mb-2">Cơ hội mới</p>
+                <h3 class="text-[36px] font-light text-[#2C2925] leading-none mb-4" id="kpi-opportunities">12</h3>
+                <span class="text-[14px] text-secondary">Trong 7 ngày qua</span>
+            </div>
+            <div class="glass-card rounded-xl p-6">
+                <p class="text-secondary font-label-md text-[14px] mb-2">Doanh thu tháng (VND)</p>
+                <h3 class="text-[36px] font-light text-[#2C2925] leading-none mb-4">850M</h3>
+                <span class="text-[14px] text-[#10B981] font-medium">+8% so với tháng trước</span>
+            </div>
+            <div class="glass-card rounded-xl p-6">
+                <p class="text-secondary font-label-md text-[14px] mb-2">Tỷ lệ chuyển đổi</p>
+                <h3 class="text-[36px] font-light text-[#2C2925] leading-none mb-4">18%</h3>
+                <span class="text-[14px] text-[#10B981] font-medium">+3% so với tháng trước</span>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="glass-card rounded-xl p-8 lg:col-span-2">
+                <h4 class="font-headline-sm text-[20px] mb-8">Doanh thu theo nhân viên</h4>
+                <div class="flex items-end gap-6 h-64 px-4 border-b border-[#E8E4DF] pb-4">
+                    <!-- Bars -->
+                    <div class="flex-1 flex flex-col items-center gap-4 group">
+                        <div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-[#C49564]" style="height: 80%"></div>
+                        <span class="font-label-md text-[12px] text-secondary">A. Minh</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-4 group">
+                        <div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-[#C49564]" style="height: 60%"></div>
+                        <span class="font-label-md text-[12px] text-secondary">C. Lan</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-4 group">
+                        <div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-[#C49564]" style="height: 95%"></div>
+                        <span class="font-label-md text-[12px] text-secondary">A. Hoàng</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-4 group">
+                        <div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-[#C49564]" style="height: 45%"></div>
+                        <span class="font-label-md text-[12px] text-secondary">C. Vy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card rounded-xl p-8">
+                <h4 class="font-headline-sm text-[20px] mb-8">Phân khúc khách hàng</h4>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 rounded-lg border border-[#E8F4F8] bg-[#E8F4F8]/50">
+                        <span class="font-label-md text-[14px] text-[#5A7D9A]">Khách lẻ</span>
+                        <span class="font-bold text-[#5A7D9A]">40%</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 rounded-lg border border-[#FFF8E8] bg-[#FFF8E8]/50">
+                        <span class="font-label-md text-[14px] text-[#D4A574]">Đại lý</span>
+                        <span class="font-bold text-[#D4A574]">35%</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 rounded-lg border border-[#FFF5F5] bg-[#FFF5F5]/50">
+                        <span class="font-label-md text-[14px] text-[#C95A5A]">VIP</span>
+                        <span class="font-bold text-[#C95A5A]">25%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-card rounded-xl overflow-hidden">
+                <div class="px-6 py-4 border-b border-[#E8E4DF] flex justify-between items-center">
+                    <h4 class="font-headline-sm text-[20px]">Lead hot (Nóng)</h4>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-[#EF4444] text-white text-[12px] px-2 py-1 rounded-full">Deadline 3 ngày</span>
+                        <a href="kanban.html" class="text-primary text-[14px] hover:underline ml-2">Xem tất cả</a>
+                    </div>
+                </div>
+                <div class="divide-y divide-[#E8E4DF]" id="dashboard-leads">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+            <div class="glass-card rounded-xl overflow-hidden">
+                <div class="px-6 py-4 border-b border-[#E8E4DF] flex justify-between items-center">
+                    <h4 class="font-headline-sm text-[20px] text-error">Công việc trễ hạn</h4>
+                    <a href="tasks.html" class="text-primary text-[14px] hover:underline">Xem tất cả</a>
+                </div>
+                <div class="divide-y divide-[#E8E4DF]" id="dashboard-tasks">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="js/mock-api.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Render leads hot
+    const leads = window.api.getLeads().filter(l => l.priority === 'Nóng' || l.priority === 'Gấp');
+    const leadsHtml = leads.map(l => `
+        <div class="px-6 py-4 flex items-center justify-between hover:bg-[#FAFAF9] transition-colors">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
+                    ${l.name.charAt(0)}
+                </div>
+                <div>
+                    <p class="font-bold text-[14px]">${l.name}</p>
+                    <p class="text-[12px] text-secondary">${l.product} - ${l.value.toLocaleString()} ₫</p>
+                </div>
+            </div>
+            <span class="px-2 py-1 rounded bg-[#FEF3C7] text-[#D97706] text-[10px] font-bold uppercase">${l.deadline}</span>
+        </div>
+    `).join('');
+    document.getElementById('dashboard-leads').innerHTML = leadsHtml;
+
+    // Render tasks
+    const tasks = window.api.getTasks().filter(t => t.status === 'pending');
+    const tasksHtml = tasks.map(t => `
+        <div class="px-6 py-4 flex items-center justify-between hover:bg-[#FAFAF9]">
+            <div class="flex items-center gap-4">
+                <div class="p-2 bg-error/10 rounded-lg">
+                    <span class="material-symbols-outlined text-error text-[20px]">warning</span>
+                </div>
+                <div>
+                    <p class="font-bold text-[14px]">${t.title}</p>
+                    <p class="text-[12px] text-error font-medium">${t.due}</p>
+                </div>
+            </div>
+            <button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+    `).join('');
+    document.getElementById('dashboard-tasks').innerHTML = tasksHtml;
+
+    document.getElementById('kpi-opportunities').innerText = window.api.getLeads().length;
+});
+</script>
+</body>
+</html>

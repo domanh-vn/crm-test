@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LUX CRM - Thanh toán</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen font-body-md text-on-surface">
+
+<aside class="fixed left-0 top-0 h-screen w-[240px] bg-white/95 backdrop-blur-md border-r border-[#E8E4DF] shadow-xl flex flex-col py-8 px-4 gap-8 z-50">
+    <div class="flex flex-col items-center gap-4 mb-4">
+        <div class="text-center">
+            <h2 class="font-headline-sm text-[18px] font-medium text-primary">Yến Sào Vĩnh Hưng</h2>
+            <p class="font-label-md text-[12px] uppercase tracking-widest text-secondary mt-1">Hệ Thống CRM</p>
+        </div>
+    </div>
+    
+    <nav class="flex-1 flex flex-col gap-2">
+        <a href="index.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-md text-[14px]">Tổng quan</span>
+        </a>
+        <a href="kanban.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">view_kanban</span>
+            <span class="font-label-md text-[14px]">Cơ hội</span>
+        </a>
+        <a href="tasks.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span class="font-label-md text-[14px]">Công việc</span>
+        </a>
+        <a href="customers.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-md text-[14px]">Danh sách</span>
+        </a>
+        <a href="payments.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-primary font-bold border-l-4 border-primary bg-[#FFF8E8] transition-all duration-300">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="font-label-md text-[14px]">Thanh toán</span>
+        </a>
+        <a href="settings.html" class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-md text-[14px]">Cài đặt</span>
+        </a>
+    </nav>
+    <div class="flex flex-col gap-2 border-t border-[#E8E4DF] pt-6">
+        <a href="login.html" class="flex items-center gap-4 py-2 px-4 rounded-lg text-secondary opacity-70 hover:text-error transition-all">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-md text-[14px]">Đăng xuất</span>
+        </a>
+    </div>
+</aside>
+
+<main class="ml-[240px] flex-1 flex flex-col h-screen">
+    <header class="bg-white/95 backdrop-blur-md h-[64px] px-8 flex justify-between items-center sticky top-0 z-40 shadow-sm border-b border-[#E8E4DF]">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-[#FAFAF9] border border-[#E8E4DF] px-4 py-2 rounded-full w-96">
+                <span class="material-symbols-outlined text-secondary mr-2">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-body-md w-full outline-none" placeholder="Tìm kiếm hóa đơn..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 relative">
+            <button onclick="showToast('Bạn không có thông báo mới', 'success')" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+            </button>
+            <button onclick="window.location.href='settings.html'" class="relative text-secondary hover:text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+            <div class="flex items-center gap-3 pl-4 border-l border-[#E8E4DF] cursor-pointer hover:opacity-80 transition-opacity" onclick="window.location.href='settings.html'">
+                <div class="text-right">
+                    <p class="font-label-md text-[14px] text-on-surface leading-tight font-medium">Nguyễn Phước Vĩnh Hưng</p>
+                    <p class="font-label-md text-[12px] text-secondary">Quản trị viên</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary border border-primary/30">
+                    VH
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="p-8 flex-1 max-w-[1440px] mx-auto w-full space-y-8">
+        <section class="flex justify-between items-end">
+            <div>
+                <h1 class="font-headline-lg text-[32px] font-light text-[#2C2925] tracking-tight">Thanh toán & Hóa đơn</h1>
+                <div class="flex gap-4 mt-4">
+                    <select class="bg-white border border-[#E8E4DF] text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5">
+                        <option>Tất cả trạng thái</option>
+                        <option>Đã thanh toán</option>
+                        <option>Chưa thanh toán</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-right flex gap-3">
+                <button onclick="openModal('addInvoiceModal')" class="bg-[#D4A574] hover:bg-[#C49564] text-white px-6 py-2.5 rounded-lg font-medium text-[14px] transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">add_circle</span>
+                    Tạo hóa đơn
+                </button>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-[#FAFAF9] text-secondary text-[14px] font-medium border-b border-[#E8E4DF]">
+                        <tr>
+                            <th class="px-6 py-4">Số HĐ</th>
+                            <th class="px-6 py-4">Khách Hàng</th>
+                            <th class="px-6 py-4">Số Tiền (VND)</th>
+                            <th class="px-6 py-4">Trạng Thái</th>
+                            <th class="px-6 py-4">Ngày Thanh Toán</th>
+                            <th class="px-6 py-4 text-right">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#E8E4DF] text-[14px]" id="invoices-table-body">
+                        <!-- Rendered via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Add Invoice Modal -->
+<div id="addInvoiceModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center">
+    <div class="modal-content bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-[#E8E4DF]">
+        <div class="px-6 py-4 border-b border-[#E8E4DF] flex justify-between items-center">
+            <h3 class="font-headline-sm text-[20px] text-[#2C2925]">Tạo hóa đơn mới</h3>
+            <button class="close-modal text-secondary hover:text-error transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-4">
+            <div>
+                <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Khách hàng *</label>
+                <select id="invCustomer" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+                    <option value="Nguyễn Thành Nam">Nguyễn Thành Nam</option>
+                    <option value="Lê Thị Hồng">Lê Thị Hồng</option>
+                    <option value="Trần Văn Kiên">Trần Văn Kiên</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Số tiền (VND) *</label>
+                <input type="number" id="invAmount" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary" placeholder="Nhập số tiền">
+            </div>
+            <div>
+                <label class="block text-[14px] font-medium text-[#2C2925] mb-1">Trạng thái</label>
+                <select id="invStatus" class="w-full border border-[#E8E4DF] rounded-lg p-2.5 outline-none focus:border-primary">
+                    <option value="Chưa thanh toán">Chưa thanh toán</option>
+                    <option value="Đã thanh toán">Đã thanh toán</option>
+                </select>
+            </div>
+        </div>
+        <div class="px-6 py-4 bg-[#FAFAF9] border-t border-[#E8E4DF] flex justify-end gap-3">
+            <button class="close-modal px-5 py-2 rounded-lg text-secondary hover:bg-white border border-transparent hover:border-[#E8E4DF] transition-colors font-medium">Hủy</button>
+            <button id="saveInvBtn" class="bg-[#D4A574] hover:bg-[#C49564] text-white px-5 py-2 rounded-lg font-medium transition-colors">Tạo hóa đơn</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/mock-api.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    renderInvoices();
+    
+    document.getElementById('saveInvBtn').addEventListener('click', () => {
+        const customer = document.getElementById('invCustomer').value;
+        const amount = document.getElementById('invAmount').value;
+        const status = document.getElementById('invStatus').value;
+        
+        if(!amount) {
+            showToast('Vui lòng nhập số tiền', 'error');
+            return;
+        }
+        
+        window.api.addInvoice({
+            customer,
+            amount: parseInt(amount),
+            status,
+            date: status === 'Đã thanh toán' ? new Date().toLocaleDateString('vi-VN') : '-'
+        });
+        
+        closeModal('addInvoiceModal');
+        document.getElementById('invAmount').value = '';
+        renderInvoices();
+        showToast('Tạo hóa đơn thành công!');
+    });
+});
+
+function renderInvoices() {
+    const invoices = window.api.getInvoices();
+    const tbody = document.getElementById('invoices-table-body');
+    
+    tbody.innerHTML = invoices.map(inv => {
+        const isPaid = inv.status === 'Đã thanh toán';
+        const badgeColor = isPaid ? 'bg-[#D1FAE5] text-[#10B981]' : 'bg-[#FEF3C7] text-[#D97706]';
+        
+        return `
+        <tr class="hover:bg-[#FAFAF9] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#2C2925]">${inv.id}</td>
+            <td class="px-6 py-4">${inv.customer}</td>
+            <td class="px-6 py-4 font-medium text-primary">${inv.amount.toLocaleString()} ₫</td>
+            <td class="px-6 py-4">
+                <span class="px-2.5 py-1 rounded-md text-[12px] font-medium ${badgeColor}">${inv.status}</span>
+            </td>
+            <td class="px-6 py-4 text-secondary">${inv.date}</td>
+            <td class="px-6 py-4 text-right">
+                <button onclick="showToast('Chức năng sửa hóa đơn đang phát triển', 'success')" class="p-1.5 text-secondary hover:text-primary rounded hover:bg-primary/5 transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+            </td>
+        </tr>
+    `}).join('');
+}
+</script>
+</body>
+</html>

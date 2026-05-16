@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9f8",
+                        "surface-tint": "#7c572d",
+                        "secondary-container": "#e5ded8",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#ffdcbc",
+                        "tertiary-fixed": "#bfe8ff",
+                        "secondary-fixed": "#e8e1db",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e8e7",
+                        "tertiary-fixed-dim": "#a2cde3",
+                        "tertiary": "#3a6477",
+                        "surface-bright": "#f9f9f8",
+                        "on-secondary-fixed-variant": "#4a4642",
+                        "inverse-on-surface": "#f1f1f0",
+                        "on-primary-fixed": "#2c1700",
+                        "on-tertiary-fixed-variant": "#204c5f",
+                        "on-surface-variant": "#50453b",
+                        "on-primary-fixed-variant": "#614018",
+                        "secondary-fixed-dim": "#ccc5bf",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f4f3",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#8ab4ca",
+                        "on-tertiary-container": "#194659",
+                        "inverse-primary": "#efbd8a",
+                        "inverse-surface": "#2f3130",
+                        "primary-fixed-dim": "#efbd8a",
+                        "on-secondary-fixed": "#1e1b17",
+                        "outline": "#827569",
+                        "surface-dim": "#dadad9",
+                        "on-secondary-container": "#66625d",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9f8",
+                        "surface-container": "#eeeeed",
+                        "on-primary-container": "#5b3a13",
+                        "on-tertiary-fixed": "#001f2a",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#d4a574",
+                        "secondary": "#625e59",
+                        "outline-variant": "#d4c4b7",
+                        "primary": "#7c572d",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "64px",
+                        "container-padding-desktop": "48px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 12px rgba(44, 41, 37, 0.04);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Sidebar Component -->
+<aside class="fixed left-0 top-0 h-screen w-72 bg-white/95 dark:bg-surface-container/95 backdrop-blur-md border-r border-white/60 dark:border-white/10 shadow-xl flex flex-col py-8 px-6 gap-8 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">The Boutique</h2>
+<p class="font-label-md text-[10px] uppercase tracking-widest text-secondary opacity-70">Wealth Management</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<div class="group flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary dark:text-secondary-fixed opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Dashboard</span>
+</div>
+<div class="group flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-primary font-bold border-r-4 border-primary bg-primary/5">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Customers</span>
+</div>
+<div class="group flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary dark:text-secondary-fixed opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Sales</span>
+</div>
+<div class="group flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary dark:text-secondary-fixed opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Reports</span>
+</div>
+<div class="group flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary dark:text-secondary-fixed opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Documents</span>
+</div>
+</nav>
+<button class="mt-4 bg-primary-container text-on-primary-container py-4 rounded-[10px] font-bold text-label-md uppercase tracking-widest hover:bg-primary transition-colors active:scale-95">
+            New Client
+        </button>
+<div class="mt-auto flex flex-col gap-2">
+<div class="flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Help Center</span>
+</div>
+<div class="flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer transition-all duration-300 text-secondary opacity-70 hover:text-primary hover:bg-primary/5">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Sign Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center px-container-padding-desktop w-full h-20 bg-white/95 dark:bg-surface-container/95 backdrop-blur-md sticky top-0 border-b border-white/60 dark:border-white/10 shadow-sm z-40">
+<div class="flex items-center gap-8">
+<h1 class="text-headline-md font-headline-md text-primary tracking-tighter">LUX CRM</h1>
+<nav class="hidden md:flex gap-6 items-center">
+<span class="text-on-surface-variant cursor-pointer hover:bg-primary/5 transition-colors px-3 py-2 rounded-lg font-label-md">Search Client</span>
+<span class="text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer font-label-md">Profile Details</span>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Executive User Profile" class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of a high-ranking luxury executive woman in a neutral-toned professional environment. The lighting is soft and cinematic, highlighting her confident and calm expression. The aesthetic is clean and modern, consistent with a high-end corporate brand identity using a palette of creams and subtle gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQBagAby_HvniZp5a_DDFQEPLJ7FTj8Tv4W_gWlfeV8DMzdZi6NiLd8IRl6ii6-0ZG9reYxP2w-O2zTIoqwY4EgQ7JKiaiBrU96uHTGu5ouXqN-eFIaSQzrCqrcqJrslyHrtcC9sJBwhh62nLtXfeKajmwpjNDASabe0_cXdqHXX3hZyR3x19J0uBYGMI_Pc91O2gq9OLmTQr2TFDMXtW007gWMcJ-T0mLKmQgudjsd7MjaQ_BdNrxbT2TdFciqHLN0yx6P7jdK5X"/>
+</div>
+</div>
+</header>
+<!-- Profile Canvas -->
+<div class="max-w-[1440px] mx-auto p-container-padding-desktop space-y-gutter">
+<!-- Page Header / Breadcrumb -->
+<div class="flex items-center gap-2 mb-8">
+<span class="text-secondary opacity-60 text-body-md cursor-pointer hover:text-primary">Customers</span>
+<span class="material-symbols-outlined text-[16px] opacity-40">chevron_right</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Hồ Sơ Khách Hàng VIP</span>
+</div>
+<!-- Profile Hero Section -->
+<section class="glass-panel rounded-[16px] p-8 flex flex-col md:flex-row items-center gap-10">
+<div class="relative">
+<div class="w-48 h-48 rounded-[24px] overflow-hidden shadow-2xl border-4 border-white">
+<img alt="Alexandre Vauthier Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr1VMgrYwBNyM2GRt_m52vBWSTRvErhVwTVpHqtojn6BQrk3kncnRxby8G3Nm46-tLmJ47d8bhpr7lXkrsxkT1kq39Deg3b33WRF3cQLxvpvQGMW-YCQS0jLXsbgbW3ykIUoDk4HTm-heYTQM7SCABZN4zqN4eA3IcTR073qmJuLivfklU1q5sad5Do2Io_Lzg2yYKb44gUxHradadq2Zel-gzQ0l7oXfU4o7Hls6Nd4WOf_1gEO0Grr1kwktxQ8snoqvYsbFqjnNL"/>
+</div>
+<div class="absolute -bottom-4 -right-4 bg-[#FFF5F5] px-4 py-2 rounded-full border border-[#C95A5A]/20">
+<span class="text-[#C95A5A] font-bold text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            VIP MEMBER
+                        </span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left space-y-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Alexandre Vauthier</h2>
+<p class="font-headline-sm text-headline-sm text-secondary opacity-70">Executive Partner</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+<button class="bg-primary text-white px-6 py-2.5 rounded-[10px] font-bold text-label-md flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                            SEND MESSAGE
+                        </button>
+<button class="border border-primary text-primary px-6 py-2.5 rounded-[10px] font-bold text-label-md hover:bg-primary/5 transition-all">
+                            EDIT PROFILE
+                        </button>
+<button class="text-secondary px-4 py-2.5 rounded-[10px] font-bold text-label-md flex items-center gap-2 hover:underline transition-all">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Financial Summary (Bento 4 Cols) -->
+<section class="md:col-span-4 space-y-gutter">
+<div class="glass-panel rounded-[16px] p-8 space-y-6">
+<h3 class="font-headline-sm text-headline-sm text-primary">Tóm tắt tài chính</h3>
+<div class="space-y-8">
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Net Worth</p>
+<p class="text-headline-md font-bold text-on-surface">$12,450,000</p>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Lifetime Value</p>
+<p class="text-headline-md font-bold text-on-surface">$842,200</p>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+<span class="material-symbols-outlined text-primary text-[32px]">shield_person</span>
+<div>
+<p class="text-label-md font-bold text-primary">Risk Appetite</p>
+<p class="text-body-md text-on-surface-variant">Conservative-Moderate</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-[16px] p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Personal Notes</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                            Preferred communication via direct assistant for logistics. Focus on boutique real estate portfolios in Southern Europe and Art investments.
+                        </p>
+</div>
+</section>
+<!-- Information & Transactions (Bento 8 Cols) -->
+<section class="md:col-span-8 space-y-gutter">
+<!-- Personal Info -->
+<div class="glass-panel rounded-[16px] p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-8">Thông tin cá nhân</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary opacity-40">call</span>
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Số điện thoại</p>
+<p class="text-body-lg text-on-surface font-medium">+33 1 42 21 00 00</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary opacity-40">alternate_email</span>
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Email</p>
+<p class="text-body-lg text-on-surface font-medium">a.vauthier@executive.luxury</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary opacity-40">location_on</span>
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Địa chỉ</p>
+<p class="text-body-lg text-on-surface font-medium leading-relaxed">212 Rue de Rivoli, Paris, France</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary opacity-40">cake</span>
+<div class="space-y-1">
+<p class="text-label-md text-secondary opacity-60 uppercase tracking-widest">Ngày sinh</p>
+<p class="text-body-lg text-on-surface font-medium">14 Tháng 03, 1978</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction History Table -->
+<div class="glass-panel rounded-[16px] p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-sm text-headline-sm text-primary">Lịch sử giao dịch</h3>
+<button class="text-primary font-bold text-label-md hover:underline flex items-center gap-1">
+                                XEM TẤT CẢ <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-surface-variant">
+<tr>
+<th class="py-4 font-label-md text-secondary opacity-60 uppercase tracking-widest">ID Giao dịch</th>
+<th class="py-4 font-label-md text-secondary opacity-60 uppercase tracking-widest">Ngày</th>
+<th class="py-4 font-label-md text-secondary opacity-60 uppercase tracking-widest">Trạng thái</th>
+<th class="py-4 font-label-md text-secondary opacity-60 uppercase tracking-widest text-right">Số tiền</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#F1F1F0]">
+<tr>
+<td class="py-5 font-body-md text-on-surface">#TX-94821</td>
+<td class="py-5 font-body-md text-on-surface">12/10/2023</td>
+<td class="py-5">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Completed</span>
+</td>
+<td class="py-5 font-bold text-[#D4A574] text-right">$45,000.00</td>
+</tr>
+<tr>
+<td class="py-5 font-body-md text-on-surface">#TX-94310</td>
+<td class="py-5 font-body-md text-on-surface">28/09/2023</td>
+<td class="py-5">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Completed</span>
+</td>
+<td class="py-5 font-bold text-[#D4A574] text-right">$122,500.00</td>
+</tr>
+<tr>
+<td class="py-5 font-body-md text-on-surface">#TX-94105</td>
+<td class="py-5 font-body-md text-on-surface">15/08/2023</td>
+<td class="py-5">
+<span class="bg-surface-variant text-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Pending</span>
+</td>
+<td class="py-5 font-bold text-[#D4A574] text-right">$8,200.00</td>
+</tr>
+<tr>
+<td class="py-5 font-body-md text-on-surface">#TX-93882</td>
+<td class="py-5 font-body-md text-on-surface">02/07/2023</td>
+<td class="py-5">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Completed</span>
+</td>
+<td class="py-5 font-bold text-[#D4A574] text-right">$14,300.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer Fine Print -->
+<footer class="mt-section-gap px-container-padding-desktop pb-12 border-t border-surface-variant pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-label-md text-secondary opacity-60">© 2024 LUX CRM - HIGH END WEALTH MANAGEMENT SOLUTIONS</p>
+<div class="flex gap-8">
+<span class="text-label-md text-secondary opacity-60 cursor-pointer hover:text-primary">DATA PRIVACY</span>
+<span class="text-label-md text-secondary opacity-60 cursor-pointer hover:text-primary">TERMS OF SERVICE</span>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

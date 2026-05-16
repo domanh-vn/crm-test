@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danh sách khách hàng - Yến Sào Vĩnh Hưng CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#7c572d",
+                        "on-surface-variant": "#50453b",
+                        "surface-container-high": "#e8e8e7",
+                        "inverse-primary": "#efbd8a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f8",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#8ab4ca",
+                        "surface-container-low": "#f3f4f3",
+                        "on-secondary-fixed": "#1e1b17",
+                        "on-primary-fixed-variant": "#614018",
+                        "inverse-on-surface": "#f1f1f0",
+                        "tertiary": "#3a6477",
+                        "tertiary-fixed": "#bfe8ff",
+                        "outline": "#827569",
+                        "on-secondary-fixed-variant": "#4a4642",
+                        "on-tertiary-container": "#194659",
+                        "on-primary-container": "#5b3a13",
+                        "surface-tint": "#7c572d",
+                        "surface": "#f9f9f8",
+                        "on-primary-fixed": "#2c1700",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed": "#e8e1db",
+                        "on-background": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eeeeed",
+                        "secondary-container": "#e5ded8",
+                        "outline-variant": "#d4c4b7",
+                        "surface-dim": "#dadad9",
+                        "on-tertiary-fixed-variant": "#204c5f",
+                        "on-secondary-container": "#66625d",
+                        "inverse-surface": "#2f3130",
+                        "secondary": "#625e59",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f8",
+                        "primary-fixed-dim": "#efbd8a",
+                        "primary-fixed": "#ffdcbc",
+                        "tertiary-fixed-dim": "#a2cde3",
+                        "secondary-fixed-dim": "#ccc5bf",
+                        "on-tertiary-fixed": "#001f2a",
+                        "error": "#ba1a1a",
+                        "primary-container": "#d4a574",
+                        "on-surface": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-padding-mobile": "20px",
+                        "unit": "8px",
+                        "section-gap": "64px",
+                        "container-padding-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(44, 41, 37, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-gutter bg-surface/95 dark:bg-surface-dim/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm h-16">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Yến Sào Vĩnh Hưng</span>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="Tìm kiếm nhanh..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-primary/5 transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/5 transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden lg:flex flex-col pt-20 pb-8 px-4 gap-2 fixed left-0 top-0 h-full w-[240px] bg-surface-container-low/90 dark:bg-surface-container-highest/90 backdrop-blur-xl border-r border-outline-variant/20 shadow-xl z-40">
+<div class="px-4 mb-6">
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold">Vĩnh Hưng CRM</h2>
+<p class="text-on-surface-variant text-[11px] uppercase tracking-widest font-medium opacity-70">Luxury Management</p>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-300 rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-300 rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-label-md">Opportunities</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-300 rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-md text-label-md">Tasks</span>
+</a>
+<!-- ACTIVE TAB: Customer List -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold shadow-sm transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Customer List</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-300 rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-all duration-300 rounded-lg active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="lg:ml-[240px] pt-16 min-h-screen">
+<div class="max-w-[1440px] mx-auto px-container-padding-mobile lg:px-container-padding-desktop py-12">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-section-gap">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Danh sách khách hàng</h1>
+<p class="text-on-surface-variant body-md">Quản lý các mối quan hệ khách hàng cao cấp và đại lý chiến lược.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 rounded-[10px] border border-primary text-primary font-medium hover:bg-primary/5 transition-colors text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+                        Upload CSV
+                    </button>
+<button class="px-5 py-2.5 rounded-[10px] border border-primary text-primary font-medium hover:bg-primary/5 transition-colors text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+                        Export CSV
+                    </button>
+<button class="px-6 py-2.5 rounded-[10px] bg-primary-container text-on-primary-container font-semibold hover:brightness-105 transition-all text-body-md flex items-center gap-2 shadow-md">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                        + Thêm khách
+                    </button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="glass-card rounded-2xl p-6 mb-8 flex flex-wrap items-center gap-4">
+<div class="flex-1 min-w-[280px]">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-body-lg">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/50 border border-outline-variant/30 rounded-[10px] focus:ring-2 focus:ring-primary/20 focus:border-primary text-body-md outline-none" placeholder="Tìm theo tên, SĐT hoặc email..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-48">
+<select class="w-full py-3 px-4 bg-white/50 border border-outline-variant/30 rounded-[10px] text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none cursor-pointer">
+<option value="">Phân khúc</option>
+<option value="vip">Khách VIP</option>
+<option value="daily">Đại lý</option>
+<option value="le">Khách lẻ</option>
+</select>
+</div>
+<div class="w-full md:w-48">
+<select class="w-full py-3 px-4 bg-white/50 border border-outline-variant/30 rounded-[10px] text-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none cursor-pointer">
+<option value="">Người phụ trách</option>
+<option value="1">Hải Nam</option>
+<option value="2">Minh Thư</option>
+</select>
+</div>
+<button class="p-3 text-on-surface-variant hover:bg-surface-container rounded-[10px] transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<!-- Data Table Container -->
+<div class="glass-card rounded-[16px] overflow-hidden border border-outline-variant/20 shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface border-b border-outline-variant/30">
+<th class="p-4 text-left w-12"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Khách hàng</th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Số điện thoại</th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Phân khúc</th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Sản phẩm</th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Người phụ trách</th>
+<th class="p-4 text-left font-label-md text-label-md text-[#6B6458] uppercase">Ngày tạo</th>
+<th class="p-4 text-right font-label-md text-label-md text-[#6B6458] uppercase">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface body-md">Trần Hoàng Long</span>
+<span class="text-on-surface-variant text-[12px]">long.th@example.com</span>
+</div>
+</td>
+<td class="p-4 text-on-surface body-md">0902 345 678</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold uppercase tracking-wider">VIP</span>
+</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-bold uppercase tracking-wider">Yến tinh chế</span>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<img alt="Owner Avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uj73fCMaXXhFK1MjrD7M7oNYvbUDhcacLWpb4yhriyeXMGQnenREzzHuwcduhuO1HVhijz9StLZSHsV9jgMyhel0WDwXZHZYtBLC1UWCQs9VpAF6o8TTztM--nteioCbSp5THkOjciMLY2LggcOnBr0GeAkXsjfChnJcZKjSP2XtfCOcI58X4dtoJwtRedb6Ll6UTGOg479hf3iwryVPzMk5sB2TdTB_7pblhHyFFYvWPkB5B2RkjktgClN"/>
+<span class="text-body-md font-medium">Hải Nam</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant body-md">12/05/2024</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface body-md">Nguyễn Thị Mai</span>
+<span class="text-on-surface-variant text-[12px]">mai.nt@agency.vn</span>
+</div>
+</td>
+<td class="p-4 text-on-surface body-md">0981 123 456</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-[11px] font-bold uppercase tracking-wider">Đại lý</span>
+</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-variant text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">Yến thô</span>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">MT</div>
+<span class="text-body-md font-medium">Minh Thư</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant body-md">10/05/2024</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface body-md">Lê Minh Tuấn</span>
+<span class="text-on-surface-variant text-[12px]">tuan.lm@gmail.com</span>
+</div>
+</td>
+<td class="p-4 text-on-surface body-md">0912 888 999</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">Lẻ</span>
+</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-bold uppercase tracking-wider">Yến tinh chế</span>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<img alt="Owner Avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uj73fCMaXXhFK1MjrD7M7oNYvbUDhcacLWpb4yhriyeXMGQnenREzzHuwcduhuO1HVhijz9StLZSHsV9jgMyhel0WDwXZHZYtBLC1UWCQs9VpAF6o8TTztM--nteioCbSp5THkOjciMLY2LggcOnBr0GeAkXsjfChnJcZKjSP2XtfCOcI58X4dtoJwtRedb6Ll6UTGOg479hf3iwryVPzMk5sB2TdTB_7pblhHyFFYvWPkB5B2RkjktgClN"/>
+<span class="text-body-md font-medium">Hải Nam</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant body-md">08/05/2024</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface body-md">Phạm Bảo Anh</span>
+<span class="text-on-surface-variant text-[12px]">baoanh.p@luxury.com</span>
+</div>
+</td>
+<td class="p-4 text-on-surface body-md">0977 444 555</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold uppercase tracking-wider">VIP</span>
+</td>
+<td class="p-4">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-bold uppercase tracking-wider">Yến tinh chế</span>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">MT</div>
+<span class="text-body-md font-medium">Minh Thư</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant body-md">05/05/2024</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-on-surface-variant body-md">Hiển thị 4 trên 156 khách hàng</span>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary-container font-bold shadow-sm">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">15</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface/95 backdrop-blur-md flex items-center justify-around px-4 border-t border-outline-variant/20 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-bold">Khách</span>
+</a>
+<div class="w-12 h-12 rounded-full bg-primary shadow-lg flex items-center justify-center -mt-8 border-4 border-background">
+<span class="material-symbols-outlined text-white">add</span>
+</div>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-[10px] font-medium">Tasks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Cài đặt</span>
+</a>
+</div>
+</body></html>

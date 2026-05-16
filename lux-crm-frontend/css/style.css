@@ -1,0 +1,100 @@
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(44, 41, 37, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(44, 41, 37, 0.12);
+}
+body {
+    background-color: #FAFAF9;
+    color: #1a1c1c;
+}
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Utilities for drag and drop */
+.kanban-column {
+    min-height: 200px;
+}
+.kanban-card {
+    cursor: grab;
+}
+.kanban-card:active {
+    cursor: grabbing;
+}
+.kanban-card.dragging {
+    opacity: 0.5;
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(44, 41, 37, 0.16);
+}
+.drag-over {
+    background-color: rgba(212, 165, 116, 0.1); /* Primary color light */
+    border: 2px dashed #D4A574;
+}
+
+/* Toast Notification */
+#toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.toast {
+    background: rgba(255, 255, 255, 0.98);
+    border-left: 4px solid #10B981;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 16px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+.toast.error {
+    border-left-color: #EF4444;
+}
+.toast-icon {
+    font-size: 24px;
+}
+.toast.success .toast-icon {
+    color: #10B981;
+}
+.toast.error .toast-icon {
+    color: #EF4444;
+}
+
+/* Modal */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    transform: scale(0.95) translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}

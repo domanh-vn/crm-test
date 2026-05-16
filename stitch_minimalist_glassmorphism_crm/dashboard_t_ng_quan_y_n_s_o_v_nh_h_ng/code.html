@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUX CRM - Tổng quan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(44, 41, 37, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(44, 41, 37, 0.12);
+        }
+        body {
+            background-color: #FAFAF9;
+            color: #1a1c1c;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#2c1700",
+                    "tertiary": "#3a6477",
+                    "surface-bright": "#f9f9f8",
+                    "on-tertiary-fixed": "#001f2a",
+                    "on-primary-container": "#5b3a13",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-primary": "#efbd8a",
+                    "on-primary-fixed-variant": "#614018",
+                    "primary": "#7c572d",
+                    "on-tertiary-container": "#194659",
+                    "inverse-on-surface": "#f1f1f0",
+                    "secondary-fixed": "#e8e1db",
+                    "primary-fixed": "#ffdcbc",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-fixed": "#1e1b17",
+                    "surface-container": "#eeeeed",
+                    "secondary": "#625e59",
+                    "secondary-fixed-dim": "#ccc5bf",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#827569",
+                    "on-secondary-fixed-variant": "#4a4642",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3130",
+                    "surface": "#f9f9f8",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#50453b",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#d4a574",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#8ab4ca",
+                    "on-secondary-container": "#66625d",
+                    "on-background": "#1a1c1c",
+                    "secondary-container": "#e5ded8",
+                    "outline-variant": "#d4c4b7",
+                    "primary-fixed-dim": "#efbd8a",
+                    "tertiary-fixed": "#bfe8ff",
+                    "surface-tint": "#7c572d",
+                    "surface-container-high": "#e8e8e7",
+                    "on-tertiary-fixed-variant": "#204c5f",
+                    "surface-dim": "#dadad9",
+                    "tertiary-fixed-dim": "#a2cde3",
+                    "surface-container-low": "#f3f4f3",
+                    "background": "#f9f9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "10px",
+                    "xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "48px",
+                    "container-padding-mobile": "20px",
+                    "unit": "8px",
+                    "section-gap": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="min-h-screen font-body-md text-on-surface">
+<aside class="fixed left-0 top-0 h-screen w-72 bg-white/95 dark:bg-surface-container/95 backdrop-blur-md border-r border-white/60 dark:border-white/10 shadow-xl flex flex-col py-8 px-6 gap-8 z-50">
+<div class="flex flex-col items-center gap-4 mb-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 p-1">
+<img alt="CRM Workspace Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiWPW1SjvmRdE62_rqyqqoGB36eQKUdOfwk2JoHIF3UGW8uQllIMEYisjogRwvO4ruA9Cgtt-1yKSTVuFEjRSyyJZVhpeSCqDgClF3VhegHYUDtQeFIm44Uvx6Jxtwb9jysqjJ9Of9pvqkd7V-AtfoGoM5BGojwPLyTt2Z_-U9BAxQS3Mrr01AUnAAf1YZbASO_u2mFSkJm5jqgM1BDdX0GMwcV4wmEiUVENvZaLq9HAvk093XHw3RwrgA"/>
+</div>
+<div class="text-center">
+<h2 class="font-headline-sm text-headline-sm text-primary">The Boutique</h2>
+<p class="font-label-md text-label-md uppercase tracking-widest text-secondary opacity-70">Wealth Management</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container py-3 px-6 rounded-lg font-label-md text-label-md uppercase tracking-widest flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">person_add</span>
+            New Client
+        </button>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Customers</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Sales</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Reports</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-secondary opacity-70 hover:text-primary hover:bg-primary/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Documents</span>
+</a>
+</nav>
+<div class="flex flex-col gap-2 border-t border-white/60 pt-6">
+<a class="flex items-center gap-4 py-2 px-4 rounded-lg text-secondary opacity-70 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Help Center</span>
+</a>
+<a class="flex items-center gap-4 py-2 px-4 rounded-lg text-secondary opacity-70 hover:text-error transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Sign Out</span>
+</a>
+</div>
+</aside>
+<main class="ml-72 flex-1">
+<header class="bg-white/95 backdrop-blur-md h-20 px-12 flex justify-between items-center sticky top-0 z-40 shadow-sm border-b border-white/60">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tighter">LUX CRM</h1>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96">
+<span class="material-symbols-outlined text-secondary mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full" placeholder="Tìm kiếm hệ thống..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-on-surface-variant hover:bg-primary/5 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:bg-primary/5 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-white/60">
+<div class="text-right">
+<p class="font-label-md text-[13px] text-on-surface leading-tight">Yến Sào Vĩnh Hưng</p>
+<p class="font-label-md text-[11px] text-secondary-container text-secondary opacity-70">Quản trị viên</p>
+</div>
+<img alt="Executive User Profile" class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="A professional headshot of a sophisticated executive manager in a high-end luxury office setting. The person is wearing a bespoke dark charcoal suit and a crisp white shirt, radiating an aura of confident leadership and expertise. The lighting is soft and directional, highlighting facial features with a professional glow typical of premium business photography. The background is slightly blurred, showing a modern minimalist office with warm wooden accents and soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCosXuuOFG61AlXn3GmJaUyvWF3OadR_i5qf_nvkBi5YlF9aLfbf0YDcb8D39_DdbqMLHcg_BK0S_Rr3uoa3H8zd3D5O2TP6tHAJzv5gBzDuB48tWmSR5AnG_vSrGfgMtmwstf9xtJN49t9Qs8TQIYOjJS2U1XRT4qWLMHp3pTaF-lzz3Te850cGZsUZIOvgLv1jX-RG5dPFcHzgqcgzQ7b8-OoPfnWQstRUSxTQjZS5s9s9V175wKoAoZ69pU1qKscJX79Qoz3u_M"/>
+</div>
+</div>
+</header>
+<div class="p-12 max-w-[1440px] mx-auto space-y-12">
+<section class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-[#2C2925]">Tổng quan</h2>
+<p class="text-secondary opacity-80 mt-1">Chào mừng bạn trở lại, hệ thống đang hoạt động ổn định.</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md uppercase tracking-widest text-secondary">Thứ Hai, 24 Tháng 5, 2024</p>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">person_search</span>
+<span class="text-[12px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-1 rounded-full">+12%</span>
+</div>
+<p class="text-secondary font-label-md uppercase tracking-widest text-[11px] mb-1">Tổng lead</p>
+<h3 class="text-[40px] font-light text-[#2C2925] leading-none">45</h3>
+</div>
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary p-2 bg-tertiary/10 rounded-lg">stars</span>
+<span class="text-[12px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-1 rounded-full">+15%</span>
+</div>
+<p class="text-secondary font-label-md uppercase tracking-widest text-[11px] mb-1">Cơ hội mới</p>
+<h3 class="text-[40px] font-light text-[#2C2925] leading-none">12</h3>
+</div>
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-[#D4A574] p-2 bg-[#D4A574]/10 rounded-lg">payments</span>
+<span class="text-[12px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-1 rounded-full">+8%</span>
+</div>
+<p class="text-secondary font-label-md uppercase tracking-widest text-[11px] mb-1">Doanh thu</p>
+<h3 class="text-[40px] font-light text-[#2C2925] leading-none">850.0M</h3>
+<p class="text-[12px] text-secondary mt-1">VND</p>
+</div>
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-error p-2 bg-error/10 rounded-lg">trending_up</span>
+<span class="text-[12px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-1 rounded-full">+2%</span>
+</div>
+<p class="text-secondary font-label-md uppercase tracking-widest text-[11px] mb-1">Tỷ lệ chuyển đổi</p>
+<h3 class="text-[40px] font-light text-[#2C2925] leading-none">18%</h3>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="glass-card rounded-xl p-8 lg:col-span-2">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline-sm text-headline-sm">Doanh thu theo nhân viên</h4>
+<span class="material-symbols-outlined text-secondary cursor-pointer">more_horiz</span>
+</div>
+<div class="flex items-end gap-6 h-64 px-4">
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 80%"></div>
+<span class="font-label-md text-[11px] text-secondary">A. Minh</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 60%"></div>
+<span class="font-label-md text-[11px] text-secondary">C. Lan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 95%"></div>
+<span class="font-label-md text-[11px] text-secondary">A. Hoàng</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 45%"></div>
+<span class="font-label-md text-[11px] text-secondary">C. Vy</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-[#D4A574] rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 70%"></div>
+<span class="font-label-md text-[11px] text-secondary">A. Nam</span>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-headline-sm text-headline-sm mb-8">Phân khúc khách hàng</h4>
+<div class="relative flex justify-center items-center mb-8">
+<div class="w-48 h-48 rounded-full border-[16px] border-[#FFF8E8] relative flex justify-center items-center overflow-hidden">
+<div class="absolute inset-0 border-[16px] border-[#E8F4F8]" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%)"></div>
+<div class="absolute inset-0 border-[16px] border-[#FFF5F5]" style="clip-path: polygon(50% 50%, 0% 100%, 0% 60%, 50% 60%)"></div>
+<div class="text-center">
+<p class="text-[28px] font-light leading-none">128</p>
+<p class="text-[10px] uppercase text-secondary tracking-widest mt-1">Khách hàng</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 rounded-lg bg-[#E8F4F8]">
+<span class="font-label-md text-[12px] text-[#5A7D9A]">Khách lẻ</span>
+<span class="font-bold text-[#5A7D9A]">40%</span>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-[#FFF8E8]">
+<span class="font-label-md text-[12px] text-[#D4A574]">Đại lý</span>
+<span class="font-bold text-[#D4A574]">35%</span>
+</div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-[#FFF5F5]">
+<span class="font-label-md text-[12px] text-[#C95A5A]">VIP</span>
+<span class="font-bold text-[#C95A5A]">25%</span>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="glass-card rounded-xl overflow-hidden">
+<div class="px-8 py-6 border-b border-white/60 flex justify-between items-center">
+<h4 class="font-headline-sm text-headline-sm">Lead hot (Nóng)</h4>
+<a class="text-primary font-label-md text-[12px] uppercase hover:underline" href="#">Xem tất cả</a>
+</div>
+<div class="divide-y divide-white/40">
+<div class="px-8 py-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">NT</div>
+<div>
+<p class="font-bold text-[14px]">Nguyễn Thành Nam</p>
+<p class="text-[12px] text-secondary">Yến sào thượng hạng x 10 set</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-[#FEF3C7] text-[#D97706] text-[10px] font-bold uppercase">Ưu tiên</span>
+</div>
+<div class="px-8 py-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center font-bold text-tertiary">LH</div>
+<div>
+<p class="font-bold text-[14px]">Lê Thị Hồng</p>
+<p class="text-[12px] text-secondary">Hỏi báo giá sỉ đại lý miền Trung</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-[#DCFCE7] text-[#16A34A] text-[10px] font-bold uppercase">Mới</span>
+</div>
+<div class="px-8 py-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary">PQ</div>
+<div>
+<p class="font-bold text-[14px]">Phạm Anh Quân</p>
+<p class="text-[12px] text-secondary">Đặt lịch tham quan cơ sở sx</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-[#FEF3C7] text-[#D97706] text-[10px] font-bold uppercase">Gấp</span>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden">
+<div class="px-8 py-6 border-b border-white/60 flex justify-between items-center">
+<h4 class="font-headline-sm text-headline-sm text-error">Công việc trễ hạn</h4>
+<a class="text-primary font-label-md text-[12px] uppercase hover:underline" href="#">Xem lịch</a>
+</div>
+<div class="divide-y divide-white/40">
+<div class="px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-error/10 rounded-lg">
+<span class="material-symbols-outlined text-error text-[20px]">call</span>
+</div>
+<div>
+<p class="font-bold text-[14px]">Gọi xác nhận đơn hàng #8291</p>
+<p class="text-[12px] text-error font-medium">Trễ 3 giờ</p>
+</div>
+</div>
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-error/10 rounded-lg">
+<span class="material-symbols-outlined text-error text-[20px]">description</span>
+</div>
+<div>
+<p class="font-bold text-[14px]">Gửi báo giá cho Đại lý X</p>
+<p class="text-[12px] text-error font-medium">Trễ 1 ngày</p>
+</div>
+</div>
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-error/10 rounded-lg">
+<span class="material-symbols-outlined text-error text-[20px]">mail</span>
+</div>
+<div>
+<p class="font-bold text-[14px]">Trả lời email hỗ trợ VIP</p>
+<p class="text-[12px] text-error font-medium">Trễ 2 ngày</p>
+</div>
+</div>
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

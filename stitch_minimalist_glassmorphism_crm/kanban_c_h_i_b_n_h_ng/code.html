@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#bfe8ff",
+                        "surface-container": "#eeeeed",
+                        "on-tertiary-fixed-variant": "#204c5f",
+                        "on-primary-fixed": "#2c1700",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "surface-container-low": "#f3f4f3",
+                        "on-primary": "#ffffff",
+                        "secondary": "#625e59",
+                        "inverse-primary": "#efbd8a",
+                        "surface": "#f9f9f8",
+                        "primary-fixed-dim": "#efbd8a",
+                        "primary-fixed": "#ffdcbc",
+                        "inverse-surface": "#2f3130",
+                        "outline-variant": "#d4c4b7",
+                        "secondary-fixed-dim": "#ccc5bf",
+                        "on-secondary-container": "#66625d",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a2cde3",
+                        "primary": "#7c572d",
+                        "primary-container": "#d4a574",
+                        "secondary-container": "#e5ded8",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9f8",
+                        "on-surface-variant": "#50453b",
+                        "surface-variant": "#e2e2e2",
+                        "background": "#f9f9f8",
+                        "on-tertiary-container": "#194659",
+                        "on-secondary-fixed-variant": "#4a4642",
+                        "tertiary": "#3a6477",
+                        "on-primary-fixed-variant": "#614018",
+                        "on-primary-container": "#5b3a13",
+                        "surface-dim": "#dadad9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001f2a",
+                        "surface-container-high": "#e8e8e7",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#7c572d",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed": "#1e1b17",
+                        "outline": "#827569",
+                        "secondary-fixed": "#e8e1db",
+                        "tertiary-container": "#8ab4ca",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f1f1f0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "48px",
+                        "unit": "8px",
+                        "section-gap": "64px",
+                        "gutter": "24px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.5px", "fontWeight": "300"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f8; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 12px rgba(44, 41, 37, 0.04);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+        .glass-card:hover {
+            box-shadow: 0 8px 24px rgba(44, 41, 37, 0.12);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-surface/95 backdrop-blur-lg border-r border-outline-variant w-[240px]">
+<div class="px-6 py-8 flex flex-col gap-1">
+<h1 class="font-headline-sm text-headline-sm text-primary-container">Yến Sào Vĩnh Hưng</h1>
+<p class="font-body-md text-body-md text-secondary">CRM Hệ Thống</p>
+</div>
+<nav class="flex-1 mt-4">
+<a class="text-secondary flex items-center gap-4 px-6 py-3 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Tổng quan</span>
+</a>
+<!-- Active State: Cơ hội -->
+<a class="bg-[#FFF8E8] text-primary-container border-l-[3px] border-primary-container flex items-center gap-4 px-6 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+<span class="font-body-md text-body-md">Cơ hội</span>
+</a>
+<a class="text-secondary flex items-center gap-4 px-6 py-3 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-body-md text-body-md">Công việc</span>
+</a>
+<a class="text-secondary flex items-center gap-4 px-6 py-3 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-body-md text-body-md">Danh sách</span>
+</a>
+<a class="text-secondary flex items-center gap-4 px-6 py-3 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Thanh toán</span>
+</a>
+<a class="text-secondary flex items-center gap-4 px-6 py-3 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Cài đặt</span>
+</a>
+</nav>
+<div class="p-6">
+<div class="flex items-center gap-3">
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a premium wealth manager in a minimalist studio environment. The lighting is soft and flattering, emphasizing a luxurious and clean aesthetic. The background is a warm neutral tone, consistent with a high-end boutique office atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0GhivCF5mTb2iTJ3tdGu-PdnEoc0tmlQDUj8etKqr7tLFDxPeddXC0WOAZL-Pk9CIUi8YXrwNw9zAoMD2W0D6uLB0bUAtcIGiO-DvdqHmdfzmugCXhpKVYuo1ch8QBfX_kFUubkSmDMTqppHI3GXdrTkwJ-2llQLmkb2p_7PQgidYvB7-o9TrZBmK8bcNb9KrdmCMpn8gQmTfqt5CCfvgTXR86INv3Gz2_2fEnvFWse-gr6e5CYfnYKy5jjPsvfIWZyuLXEX-sSNQ"/>
+<div>
+<p class="font-body-md text-body-md font-medium">Minh Trần</p>
+<p class="text-[11px] text-secondary">Quản lý vùng</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[240px] min-h-screen">
+<!-- TopAppBar (Shared Component Integration) -->
+<header class="sticky top-0 h-[64px] z-50 bg-surface/95 backdrop-blur-lg flex justify-between items-center w-full px-container-padding-desktop border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">menu</span>
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface">Cơ hội bán hàng</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<input class="bg-white/50 border border-outline-variant rounded-[10px] pl-10 pr-4 py-2 text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none w-64 transition-all" placeholder="Tìm kiếm cơ hội..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+</div>
+<button class="material-symbols-outlined text-secondary hover:bg-surface-container-low p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container overflow-hidden">
+<img alt="User Profile" data-alt="Close-up portrait of a sophisticated male executive with a warm, professional expression. High-key natural lighting, soft shadows, pristine white and warm stone palette. Minimalist and high-end digital design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeuDSfQ_vTALUmeh3C4r4V91bt1OXkl4UsfS8g0G9MSflvl9oCDkVjEPfh8YE6IRkbVJuTVbHAoUqThjHemOCkbuNqIGivGY4u_gtKord20KQwKnV4dZgSBEDsh14kxdi9JgW96u0NQlewBXpNMFGG2m84b0hHtRylIkiPqgjxxmGrMG4toCDOjYf0ndGCc0xgiwsjPZGwZVtDhbywHBbOudyho-8EBeMbzscLfT8a3rQqr9Nn6JjM2osC5AFYU_v0ZwozfO-m1Vd4"/>
+</div>
+</div>
+</header>
+<section class="p-container-padding-desktop">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-[#2C2925]">Cơ hội bán hàng</h1>
+<p class="text-secondary mt-2">Quản lý hành trình chuyển đổi khách hàng</p>
+</div>
+<button class="bg-[#D4A574] text-white px-6 py-3 rounded-[10px] font-medium flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Thêm cơ hội
+                </button>
+</div>
+<!-- Filters Row -->
+<div class="flex gap-4 mb-10 items-center">
+<div class="flex items-center gap-3 bg-white/50 border border-outline-variant px-4 py-2 rounded-[10px] cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-secondary">person_search</span>
+<span class="font-body-md text-body-md text-secondary">Nhân viên</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">expand_more</span>
+</div>
+<div class="flex items-center gap-3 bg-white/50 border border-outline-variant px-4 py-2 rounded-[10px] cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-secondary">segment</span>
+<span class="font-body-md text-body-md text-secondary">Phân khúc</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">expand_more</span>
+</div>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-widest">Sắp xếp theo: Mới nhất</p>
+</div>
+<!-- Kanban Board Grid -->
+<div class="grid grid-cols-4 gap-6 items-start">
+<!-- Column: Mới -->
+<div class="bg-[#FAFAF9] rounded-[12px] p-4 flex flex-col gap-4 min-h-[600px]">
+<div class="flex justify-between items-center px-2 py-1">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Mới</h2>
+<span class="bg-outline-variant/30 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold">04</span>
+</div>
+<!-- Card 1 -->
+<div class="glass-card rounded-[16px] p-4 relative group cursor-grab active:cursor-grabbing">
+<div class="absolute top-4 right-4">
+<span class="text-[10px] font-bold px-2 py-1 rounded-[10px] bg-[#E8F4F8] text-[#5A7D9A]">Khách lẻ</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-medium text-[#2C2925] mb-1">Trần Anh Tuấn</h3>
+<p class="font-headline-lg text-[20px] font-light text-[#D4A574] mb-4">12.500.000 ₫</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span class="text-[12px] text-secondary">Hạn: 24/05/2024</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-outline-variant/30">
+<img alt="Assignee" class="w-6 h-6 rounded-full" data-alt="Macro photography of a premium white bird's nest in a luxury glass container. Soft golden hour lighting, bright and airy background, sophisticated product showcase style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArsywNBQqtvm6AdXJl7v24Rgn1xMF6rUZ_GOGjjBxkT55wEalEmhMkP-gWM30dRxwRVKN9oT70U2sEjOEzU0iVjeR6JRF8zVxXybTbjy00psB2umH0gYPLbeDYMfbinehaXCQVvvF2i8g3xkF3jlqZwOdw-f1TbQDnCB6Dgn4FQKcdlvh566MMkjS6w5wd7NdVaIDoUtobNeIG1FkTYCxEU3B42DZ6cvDwGtGebfXrMXgtK86FO6qptk3B_IrQc9e_4nsSa6seGlZ6"/>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">more_horiz</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-[16px] p-4 relative group cursor-grab">
+<div class="absolute top-4 right-4">
+<span class="text-[10px] font-bold px-2 py-1 rounded-[10px] bg-[#FFF8E8] text-[#D4A574]">Đại lý</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-medium text-[#2C2925] mb-1">Yến Sào Tâm An</h3>
+<p class="font-headline-lg text-[20px] font-light text-[#D4A574] mb-4">85.000.000 ₫</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[16px] text-error">event_busy</span>
+<span class="text-[12px] text-error font-medium">Hạn: Hôm nay</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-outline-variant/30">
+<img alt="Assignee" class="w-6 h-6 rounded-full" data-alt="A minimalist architectural interior of a high-end sales office with floor-to-ceiling windows, soft daylight, and warm wooden accents. The mood is calm and professional, reflecting luxury minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAREZVcHT6M_Da85lOLPY3a7X6MtAJ4z9s6LKBIhiGhGempqGXyuTDE7a-TghiCJcBWLtwQVIhI8Rk29Bvs1-ft375-Bn-kDmgPKdYcbhYZaNI1j2hmpp6_yHdd_i9NiovCYGOhVcwY_MQjLCDo3h7lmJHh3OVAipTXzjxMB5J0UjuhdLu-GR4FsWYu1f5WHjciJ-drIwxTFJXHrKwhiMvmI6JD8PMhmPLVfOsQz_e8lcuI0KuAojpJMpH2Z49WWUoW-NKKnViAcEUS"/>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">more_horiz</span>
+</div>
+</div>
+</div>
+<!-- Column: Liên hệ -->
+<div class="bg-[#FAFAF9] rounded-[12px] p-4 flex flex-col gap-4 min-h-[600px]">
+<div class="flex justify-between items-center px-2 py-1">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Liên hệ</h2>
+<span class="bg-outline-variant/30 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold">02</span>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-[16px] p-4 relative group cursor-grab">
+<div class="absolute top-4 right-4">
+<span class="text-[10px] font-bold px-2 py-1 rounded-[10px] bg-[#FFF5F5] text-[#C95A5A]">VIP</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-medium text-[#2C2925] mb-1">Phạm Minh Hoàng</h3>
+<p class="font-headline-lg text-[20px] font-light text-[#D4A574] mb-4">240.000.000 ₫</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span class="text-[12px] text-secondary">Hạn: 30/05/2024</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-outline-variant/30">
+<img alt="Assignee" class="w-6 h-6 rounded-full" data-alt="Abstract macro shot of high-quality crystalline bird nest textures. Pristine whites and translucent fibers with warm, soft-focus lighting. Emphasizing premium quality and purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH0h_vIaLKRt-qOfmycuuEO7uq8L1w6McMCQCBuVdR1fJAu7LXvmb7wpfpXS6FZ1SVqjwDwS3A7Wsu3MuY9bsmXHylnBLyd9lS1NkzUQGggvIol7TOYw-IfdS7NRvgG5XL9P1bsnSeu3P3lhpK7xkR4yjqv6eF2eu2fy_WhydjDPIrKfFvrevr6X194_q0edshWvNn3BZ7_eZHyyAnkwzufs92D3A--PtbMzj2lN-q_zaOFRgxQ1WgEE465oHpfEALaBfO8nDgkZ_S"/>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">more_horiz</span>
+</div>
+</div>
+</div>
+<!-- Column: Đề xuất -->
+<div class="bg-[#FAFAF9] rounded-[12px] p-4 flex flex-col gap-4 min-h-[600px]">
+<div class="flex justify-between items-center px-2 py-1">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Đề xuất</h2>
+<span class="bg-outline-variant/30 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold">01</span>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-[16px] p-4 relative group cursor-grab">
+<div class="absolute top-4 right-4">
+<span class="text-[10px] font-bold px-2 py-1 rounded-[10px] bg-[#E8F4F8] text-[#5A7D9A]">Khách lẻ</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-medium text-[#2C2925] mb-1">Nguyễn Thu Thủy</h3>
+<p class="font-headline-lg text-[20px] font-light text-[#D4A574] mb-4">4.200.000 ₫</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span class="text-[12px] text-secondary">Hạn: 02/06/2024</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-outline-variant/30">
+<img alt="Assignee" class="w-6 h-6 rounded-full" data-alt="Elegant luxury branding imagery featuring a minimal gift box of bird's nest products. The setting is a bright, high-key lifestyle scene with soft linen textures and warm stone surfaces. Professional commercial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMmY0kP0ldFXKtDjWdX3T1gaAczvJGCqEYQAn-aUxPeItRjBshYi40onaE1xi-AqlG-5U4h7A6tRC9uQ12W7KA7N399g53WSoBRFC1xvgEdw3KE0kG5At6gNzEMmRpxH79IMSRWvDoGGmSXNUblvJphz_cofYZp3LzUGYHInlrWI0UjfJiysolwnP5rWZL1Hocyc02-EvJk6dpVekn9U-WJU2Qb4ixW3ooM3ayW6Pva7FNRW9E5-SeL4fUTmywxXqPT1zVygkZVmb_"/>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">more_horiz</span>
+</div>
+</div>
+</div>
+<!-- Column: Chốt đơn -->
+<div class="bg-[#FAFAF9] rounded-[12px] p-4 flex flex-col gap-4 min-h-[600px]">
+<div class="flex justify-between items-center px-2 py-1">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Chốt đơn</h2>
+<span class="bg-outline-variant/30 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold">03</span>
+</div>
+<!-- Empty state or success card placeholder -->
+<div class="border-2 border-dashed border-outline-variant/50 rounded-[16px] p-8 flex flex-col items-center justify-center text-center opacity-50">
+<span class="material-symbols-outlined text-[32px] text-secondary mb-2">check_circle</span>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-tight">Kéo thẻ vào đây<br/>để chốt đơn</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual FAB (Only for main board) -->
+<button class="fixed bottom-10 right-10 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">add_task</span>
+</button>
+</main>
+</body></html>
